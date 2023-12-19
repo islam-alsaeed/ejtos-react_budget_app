@@ -1,0 +1,28 @@
+/* ExpenseItem.css */
+
+.circle-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%; /* Make it a circle */
+}
+
+.increase-button {
+    background-color: #4caf50; /* Green color for increase */
+    color: white;
+}
+
+.decrease-button {
+    background-color: #ff0000; /* Red color for decrease */
+    color: white;
+}
+
+.circle-button:hover {
+    opacity: 0.8; /* Reduce opacity on hover for a subtle effect */
+}
