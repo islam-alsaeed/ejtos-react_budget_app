@@ -20,9 +20,6 @@ const Currency = () => {
                 width: '100%'
             }}
         >
-            <option value="" >
-                Select Currency
-            </option>
             <option value="$"> $ Dollar</option>
             <option value="£"> £ Pound</option>
             <option value="€"> € Euro</option>

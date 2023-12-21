@@ -5,26 +5,26 @@ const Budget = () => {
     const { budget, dispatch, spending,currency } = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     const handleBudgetChange = (event) => {
-        setNewBudget(event.target.value);
-    };
+        const updatedBudget = parseInt(event.target.value);
 
-    const handleSaveBudget = () => {
-        if (newBudget < spending) {
-            alert('You cannot reduce the budget value lower than the spending')
-        }
-        else {
+        if (updatedBudget > 20000) {
+            alert('You have reached the upper limit');
+        } else if (updatedBudget < spending) {
+            alert('You cannot reduce the budget value lower than the spending');
+        } else {
+            setNewBudget(updatedBudget);
             dispatch({
                 type: 'SET_BUDGET',
-                payload: parseInt(newBudget),
+                payload: updatedBudget,
             });
         }
     };
 
+
     return (
         <div className='alert alert-secondary'>
-            <span style={{ marginRight: ".5rem" }}>Budget:{currency} {budget}</span>
-            <input type="number" step="10" value={newBudget} onChange={handleBudgetChange} style={{ marginLeft: '1rm' }}></input>
-            <button className="btn btn-primary" onClick={handleSaveBudget} style={{ marginLeft: '1rem' }}>Save</button>
+            <span style={{ marginRight: ".1rem" }}>Budget: {currency} </span>
+            <input type="number" step="10" value={newBudget} onChange={handleBudgetChange} style={{ marginLeft: '0rm' }}></input>
         </div>
     );
 };
